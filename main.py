@@ -1,4 +1,4 @@
-f = open("input.txt", "r")
+f = open("input.txt", "r")                                                                                              #input from file
 x = int(f.readline().split(': ')[1])
 x = int(input())
 y = f.readline()
@@ -6,21 +6,20 @@ y = f.readline()
 y = f.readline()
 
 lines = f.readlines()
-f.close()
+f.close()                                                                                                               #close file input
 goodies = {}
 price_arr = []
 for line in lines:
-    val = line.split(': ')
+    val = line.split(': ')                                                                                              #separating names of goodies and their cost
     goodies[val[0]] = int(val[1].split('\n')[0])
     price_arr.append(int(val[1].split('\n')[0]))
 
 ans = {k: v for k, v in sorted(goodies.items(), key=lambda item: item[1])}
 
-output = open("output.txt", "w")
-
+output = open("output.txt", "w")                                                                                        #opening the output file
 output.write("The goodies selected for distribution are: \n\n")
 
-price_arr.sort()
+price_arr.sort()                                                                                                        #sort the cost in ascending order and add to a new list
 min_val = 100000000
 ind = 0
 
@@ -41,5 +40,5 @@ for i in ans:
         break
 
 output.write(
-    "\nAnd the difference between the chosen goodie with highest price and the lowest price is " + str(min_val))
+    "\nAnd the difference between the chosen goodie with highest price and the lowest price is " + str(min_val))        #print the difference between max and min
 output.close()
