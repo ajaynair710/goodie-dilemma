@@ -1,4 +1,4 @@
-# goodie-dilemma
+# Goodie Dilemma
 This repository is created for the High Peak Programming Assignment.
 
 # Problem Statement
